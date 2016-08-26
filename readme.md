@@ -1,7 +1,7 @@
 #Dicionário astrológico
-Acesse: [www.dicionarioastrologico.com.br](www.dicionarioastrologico.com.br)
+Acesse: <a href="www.dicionarioastrologico.com.br" target="_blank">www.dicionarioastrologico.com.br</a>
 
-Projeto para auxiliar nos termos astrológicos mantido pela [Escola Regulus](www.regulus.com.br)
+Projeto para auxiliar nos termos astrológicos mantido pela <a href="www.regulus.com.br" target="_blank">Escola Regulus de Astrologia</a>
 
 
 
