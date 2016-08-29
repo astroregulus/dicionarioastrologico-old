@@ -20,14 +20,7 @@ router.map({
     component: About
   },
   '/dicionario': {
-    component: Dictionary,
-    subRoutes: {
-      '/:letter': {
-        // Bar will be rendered inside Foo's <router-view>
-        // when /foo/bar is matched
-        component: ListLetter
-      }
-    }
+    component: Dictionary
   }
 })
 

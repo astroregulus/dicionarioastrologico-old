@@ -1,8 +1,10 @@
 <template>
 <div>
 <div>
-   <a @click="setLetter(letter)" v-for="letter in letters">{{letter}}</a>
-   <dictionaryitem v-for="q in dictionary | filterByLetter letter" :item=q></dictionaryitem>
+   <button @click="setLetter(letter)" v-for="letter in letters" 
+            v-bind:class="{ 'active': selectedLetter == letter}">{{letter}}</button>
+   <button @click="setLetter()" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
+   <dictionaryitem v-for="q in dictionary | filterByLetter selectedLetter" :item=q></dictionaryitem>
 </div>
 <!-- main view -->
 <router-view
@@ -22,15 +24,22 @@ export default {
   components: {dictionaryitem},
   methods : {
     setLetter : function(letter){
-      this.letter = letter;
+      this.selectedLetter = letter;
     }
   },
   data () {
     return {
       letters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
       dictionary : dictionary.termos,
-      letter : ""
+      selectedLetter : ""
     }
   }
 }
 </script>
+
+<style>
+  .active {
+    color : red;
+  }
+</style>
+
