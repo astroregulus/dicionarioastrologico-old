@@ -3,9 +3,14 @@ import Router from 'vue-router'
 import App from './components/App.vue'
 import About from './components/About.vue'
 import ListLetter from './components/ListLetter.vue'
+import Dictionary from './components/Dictionary.vue'
+import DictionaryItem from './components/DictionaryItem.vue'
+import { filterByLetter } from './filters'
 
 // install router
 Vue.use(Router)
+
+Vue.filter('filterByLetter', filterByLetter)
 
 // routing
 var router = new Router()
@@ -14,8 +19,15 @@ router.map({
   '/about': {
     component: About
   },
-  '/:letter': {
-    component: ListLetter
+  '/dicionario': {
+    component: Dictionary,
+    subRoutes: {
+      '/:letter': {
+        // Bar will be rendered inside Foo's <router-view>
+        // when /foo/bar is matched
+        component: ListLetter
+      }
+    }
   }
 })
 
@@ -24,7 +36,7 @@ router.beforeEach(function () {
 })
 
 router.redirect({
-  '*': ''
+  '*': '/dicionario'
 })
 
 router.start(App, '#app')
