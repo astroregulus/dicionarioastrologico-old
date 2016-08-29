@@ -1,9 +1,9 @@
 <template>
 <div>
 <div>
-   <button @click="setLetter(letter)" v-for="letter in letters" 
+   <button class="btn btn-default" @click="setLetter(letter)" v-for="letter in letters" 
             v-bind:class="{ 'active': selectedLetter == letter}">{{letter}}</button>
-   <button @click="setLetter()" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
+   <button @click="setLetter()" class="btn btn-default" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
    <dictionaryitem v-for="q in dictionary | filterByLetter selectedLetter" :item=q></dictionaryitem>
 </div>
 <!-- main view -->
@@ -38,8 +38,6 @@ export default {
 </script>
 
 <style>
-  .active {
-    color : red;
-  }
+
 </style>
 
