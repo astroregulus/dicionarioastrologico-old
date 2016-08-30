@@ -4,7 +4,11 @@
    <button class="btn btn-default" @click="setLetter(letter)" v-for="letter in letters" 
             v-bind:class="{ 'active': selectedLetter == letter}">{{letter}}</button>
    <button @click="setLetter()" class="btn btn-default" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
-   <dictionaryitem v-for="q in dictionary | filterByLetter selectedLetter" :item=q></dictionaryitem>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+    <dictionaryitem  v-for="(a, q) in dictionary | filterByLetter selectedLetter" :id=a :item=q dataparent="accordion"></dictionaryitem>
+      
+    </div>
 </div>
 <!-- main view -->
 <router-view
