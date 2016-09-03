@@ -2,9 +2,9 @@
    <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#{{dataparent}}" href="#description{{id}}" aria-expanded="false" aria-controls="description{{id}}">
+        <button role="button" data-toggle="collapse" data-parent="#{{dataparent}}" href="#description{{id}}" aria-expanded="false" aria-controls="description{{id}}">
           {{item.title}}
-        </a>
+        </button>
       </h4>
     </div>
     <div id=description{{id}} class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
