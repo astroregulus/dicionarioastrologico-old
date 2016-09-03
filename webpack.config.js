@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   babel: {
-    presets: ['es2015'],
+    presets: ['es2015','stage-2'],
     plugins: ['transform-runtime']
   }
 }

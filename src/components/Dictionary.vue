@@ -1,13 +1,13 @@
 <template>
 <div>
 <div>
-   <button class="btn btn-default" @click="setLetter(letter)" v-for="letter in letters" 
+   <button class="btn btn-default" @click="setLetter(letter)" v-for="letter in letters"
             v-bind:class="{ 'active': selectedLetter == letter}">{{letter}}</button>
    <button @click="setLetter()" class="btn btn-default" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
     <dictionaryitem  v-for="(a, q) in dictionary | filterByLetter selectedLetter" :id=a :item=q dataparent="accordion"></dictionaryitem>
-      
+
     </div>
 </div>
 <!-- main view -->
@@ -21,8 +21,10 @@
 </template>
 
 <script>
-import dictionary from './dictionary.json';
+//import dictionary from './dictionary.json';
+import dictionary from '../dictionary/all.js';
 import dictionaryitem from './DictionaryItem.vue'
+
 export default {
   name: 'Dictionary',
   components: {dictionaryitem},
@@ -44,4 +46,3 @@ export default {
 <style>
 
 </style>
-
