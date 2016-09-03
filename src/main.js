@@ -4,7 +4,7 @@ import App from './components/App.vue'
 import About from './components/About.vue'
 import ListLetter from './components/ListLetter.vue'
 import Dictionary from './components/Dictionary.vue'
-import DictionaryItem from './components/DictionaryItem.vue'
+import SpecificWord from './components/SpecificWord.vue'
 import { filterByLetter } from './filters'
 
 // install router
@@ -17,10 +17,15 @@ var router = new Router()
 
 router.map({
   '/about': {
+    name: "about",
     component: About
   },
   '/dicionario': {
+    name: "dicionario",
     component: Dictionary
+  },
+  '/palavra/:id' : {
+    component : SpecificWord
   }
 })
 

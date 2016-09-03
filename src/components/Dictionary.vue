@@ -6,7 +6,7 @@
    <button @click="setLetter()" class="btn btn-default" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-    <dictionaryitem  v-for="(a, q) in dictionary | filterByLetter selectedLetter" :id=a :item=q dataparent="accordion"></dictionaryitem>
+    <dictionaryitem  v-for="(a, q) in dictionary | filterByLetter selectedLetter" :id=a :item=q dataparent="accordion" track-by="id"></dictionaryitem>
 
     </div>
 </div>
