@@ -18,8 +18,6 @@ export default {
   components: {dictionaryitem},
   methods : {
     setLetter : function(letter){
-        console.log("call this");
-        console.log(letter);
       this.selectedLetter = letter;
     }
   },
@@ -36,7 +34,6 @@ export default {
     'letter-changed': function (letter) {
       // `this` in event callbacks are automatically bound
       // to the instance that registered it
-      console.log("Chegou");
       this.setLetter(letter);
       return true;
     }
