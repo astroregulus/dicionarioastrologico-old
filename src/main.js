@@ -4,6 +4,9 @@ import App from './components/App.vue'
 import About from './components/About.vue'
 import ListLetter from './components/ListLetter.vue'
 import Dictionary from './components/Dictionary.vue'
+import WordDefinition from './components/WordDefinition.vue'
+
+import DictionaryList from './components/DictionaryList.vue'
 import SpecificWord from './components/SpecificWord.vue'
 import { filterByLetter } from './filters'
 
@@ -22,7 +25,20 @@ router.map({
   },
   '/dicionario': {
     name: "dicionario",
-    component: Dictionary
+    component: Dictionary,
+     subRoutes: {
+      '/' : {
+        component: DictionaryList
+      },
+      '/letra/:letra':{
+        name : 'letra',
+        component: DictionaryList
+      },
+      '/palavra/:id': {
+        name: "palavra",
+        component: WordDefinition
+     }
+    }
   },
   '/palavra/:id' : {
     component : SpecificWord
@@ -34,7 +50,7 @@ router.beforeEach(function () {
 })
 
 router.redirect({
-  '*': '/dicionario'
+  '*': '/dicionario/letra/todas'
 })
 
 router.start(App, '#app')

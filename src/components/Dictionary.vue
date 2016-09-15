@@ -1,13 +1,10 @@
 <template>
 <div>
 <div>
-   <button class="btn btn-default" @click="setLetter(letter)" v-for="letter in letters"
+   <button class="btn btn-default" v-link="{name:'letra', params:{letra:letter}}" v-for="letter in letters"
             v-bind:class="{ 'active': selectedLetter == letter}">{{letter}}</button>
-   <button @click="setLetter()" class="btn btn-default" v-bind:class="{ 'active': !selectedLetter}"> ALL</button>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-    <dictionaryitem  v-for="(a, q) in dictionary | filterByLetter selectedLetter" :id=a :item=q dataparent="accordion" track-by="id"></dictionaryitem>
-
+            
+   <button v-link="{name:'letra', params:{letra:'todas'},activeClass: 'active'}" class="btn btn-default"> ALL</button>
     </div>
 </div>
 <!-- main view -->
@@ -30,14 +27,21 @@ export default {
   components: {dictionaryitem},
   methods : {
     setLetter : function(letter){
+      letter = letter == "todas" ? "" : letter;
+      this.$broadcast('letter-changed', letter);
       this.selectedLetter = letter;
+    }
+  },
+  watch :{
+    '$route' : function(){
+      this.setLetter(this.$route.params.letra);
     }
   },
   data () {
     return {
       letters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
       dictionary : dictionary.termos,
-      selectedLetter : ""
+      selectedLetter : this.$route.params.letra
     }
   }
 }

@@ -8,13 +8,8 @@
     <div class="container">
       <h1>Dicionário astrológico</h1>
 
-      <!-- main view -->
-      <router-view
-        class="view"
-        keep-alive
-        transition
-        transition-mode="out-in">
-      </router-view>
+      <!-- sub-route -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
