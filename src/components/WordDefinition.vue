@@ -11,20 +11,10 @@
 import dictionary from '../dictionary/all.js';
 export default {
   name: 'WordDefinition',
-  methods : {
-    updateWord : function(){
+   computed: {
+    item: function () {
       let id = this.$route.params.id;
-      this.item = dictionary.termos.find(x=> x.id === id);
-    }
-  },
-  data () {
-    return {
-      item : null
-    }
-  },
-  watch : {
-    '$route' : function(){
-      this.updateWord();
+      return dictionary.termos.find(x=> x.id === id);
     }
   }
 
