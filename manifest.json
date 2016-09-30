@@ -1,0 +1,9 @@
+{
+  "short_name": "AstroDict",
+  "name": "Dicionário Astrológico",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#e7e7e7",
+  "background_color": "#e7e7e7"
+}
