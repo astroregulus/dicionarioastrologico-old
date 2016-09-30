@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li v-link-active><a v-link="{name:'dicionario',activeClass: 'active'}">Dicionário</a></li>
-          <li><a href="#">Contribuir</a></li>
+          <li><a target= "_blank" href="https://feedback.userreport.com/a2591924-a713-4ad4-b095-2236584bf2cb/">Contribuir</a></li>
           <li v-link-active><a v-link="{name:'about',activeClass: 'active'}">Sobre</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
