@@ -1,4 +1,4 @@
-if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+if ('serviceWorker' in navigator && (window.location.protocol === 'http:' || window.location.hostname === 'localhost')) {
   
   navigator.serviceWorker.register('service-worker.js', {
     scope: './'
