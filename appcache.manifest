@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+
+CACHE:
+./index.html
+./static/build.js
+./static/js/install.js
+./static/dicionario.css
+
+
+NETWORK:
+*
+
+
+SETTINGS:
+prefer-online
