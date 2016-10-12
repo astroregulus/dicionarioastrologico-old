@@ -24,7 +24,7 @@
   <!-- Tile icon for Win8 (144x144 + tile color) -->
   <meta name="msapplication-TileColor" content="#e7e7e7">
 
-  <script src="http://code.jquery.com/jquery-3.1.0.min.js"crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="static/dicionario.css">
@@ -32,10 +32,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 
-
-
-
-
+    <script>
+    if (window.location.protocol != "https:" && window.location.hostname == "dicionarioastrologico.com.br")
+        window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    </script>
 
 </head>
 
